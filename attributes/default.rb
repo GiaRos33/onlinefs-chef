@@ -6,6 +6,8 @@ default['onlinefs']['download_url']           = "#{node['download_url']}/onlinef
 
 default['onlinefs']['user']                   = "onlinefs"
 default['onlinefs']['group']                  = "onlinefs"
+default['onlinefs']['uid']                                  = "10030"
+default['onlinefs']['gid']                                  = "10031"
 
 default['onlinefs']['home']                   = "#{node['install']['dir']}/onlinefs"
 default['onlinefs']['etc']                    = "#{node['onlinefs']['home']}/etc"
