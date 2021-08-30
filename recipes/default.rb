@@ -1,5 +1,6 @@
 group node['onlinefs']['group'] do
   action :create
+  gid node['onlinefs']['gid']
   not_if "getent group #{node['onlinefs']['group']}"
   not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
@@ -8,6 +9,7 @@ user node['onlinefs']['user'] do
   home node['onlinefs']['user-home']
   gid node['onlinefs']['group']
   action :create
+  uid node['onlinefs']['uid']
   shell "/bin/nologin"
   manage_home true
   system true
